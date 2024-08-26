@@ -4,6 +4,5 @@ from .views import Recibidos
 app_name = 'mensaje'
 
 urlpatterns = [
-    path('recibidos/', Recibidos  ,name='Recibidos' ):
-
+    path('recibidos/',   Recibidos ,name='Recibidos' )
 ]

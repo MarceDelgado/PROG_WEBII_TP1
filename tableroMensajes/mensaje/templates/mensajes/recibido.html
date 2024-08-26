@@ -1,11 +1,54 @@
+<!-- Punto 4 -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mensajes Recibidos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Mensajes Recibidos</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Remitente</th>
+                <th>Destinatario</th>
+                <th>Fecha y Hora de Envío</th>
+                <th>Mensaje</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mensaje in mensajes %}
+            <tr>
+                <td>{{ mensaje.remitente }}</td>
+                <td>{{ mensaje.destinatario }}</td>
+                <td>{{ mensaje.fechayHora }}</td>
+                <td>{{ mensaje.textoDelMensaje }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4">No hay mensajes recibidos.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
