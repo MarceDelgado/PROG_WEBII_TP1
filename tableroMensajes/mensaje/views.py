@@ -4,5 +4,5 @@ from .models import Mensaje
 def Recibidos(request):
     mensajesRecibidos = Mensaje.objects.all()
 
-    return render(request, ' mensajes/recibido.html', {'mensajes' : mensajesrecibidos})
+    return render(request, 'mensajes/recibido.html', {'mensajes' : mensajesRecibidos})
 
